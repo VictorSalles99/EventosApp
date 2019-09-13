@@ -1,0 +1,40 @@
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="style/styleCss.css" />
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<link type="text/css" rel="stylesheet"
+	href="materialize/css/materialize.min.css" media="screen,projection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+<link type="text/css" rel="stylesheet" href="style/styleCss.css" />
+
+<title>EventosApp</title>
+</head>
+<body>
+	<div class="containerLogin container">
+		<form th:action="@{/login}" method="post"
+			action="j_spring_security_check">
+			<input name="login" class="form-control" placeholder="Usuário" /> <input
+				type="password" name="senha" class="form-control"
+				placeholder="Senha" />
+
+			<button class="btn btn-danger btn-block btn-sm" name="entrar">Entrar</button>
+			
+		</form>
+		<a href="/cadastrarUsuario"><button
+				class="btn btn-primary btn-block btn-sm" name="caduser">Cadastre-se</button></a>
+				<label>Login ADMIN: victor > SENHA:00 </label><br>
+				<label>Login USER: LUCAS > SENHA:00 </label> 
+				
+		
+
+
+	</div>
+</body>
+</html>

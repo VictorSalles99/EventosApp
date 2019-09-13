@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org"xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link type="text/css" rel="stylesheet" href="style/styleCss.css"/>
+        <title>EventosApp</title>
+    </head>
+    <body>
+        <header>
+
+            <nav>
+                <div class="nav-wrapper headercolor">
+                <a href="#" class="brand-logo">Eventos</a>
+                </div>
+            </nav>
+            <div class="menu">  
+                <div class="icon-close">
+                    <img src="https://img.icons8.com/metro/26/000000/multiply.png">
+                </div>
+                <ul>
+                    <li><a href="/eventos" class="waves-effect waves-light btn"> <i class="material-icons left">apps</i>Lista de Evento</a></li>
+                    <li><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Evento</a></li>
+                    <li><a href="/" class="waves-effect waves-light btn"><i class="material-icons left">home</i>Home</a></li>
+                                   <li><a href="/logout" class="waves-effect waves-light btn"><i class="material-icons left">close</i>Sair</a></li>
+               
+                </ul>
+            </div>
+            <div class="icon-menu">
+                <img src="https://img.icons8.com/metro/26/000000/menu.png">
+            </div>	
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                <script>
+                function main () {
+                $('.icon-menu').click( function () {
+                $('.menu').animate({left: '0px'}, 200);
+                $('body').animate( {left: '285px'}, 200);
+                });
+                $('.icon-close').click( function () {
+                $('.menu').animate({left: '-285px'}, 200);
+                $('body').animate({left: '0px'}, 200);
+                });
+                };  
+                $(document).ready(main);
+            </script>
+        </header>
+        <div th:each="evento :${evento}" class="container detalhesEvento">
+            <div class="row">
+                <p>Nome: <span th:text="${evento.nome}"></span></p>
+                <p>Local: <span th:text="${evento.local}"></span></p>
+                <p>Data: <span th:text="${evento.data}"></span></p>
+                <p>Horário: <span th:text="${evento.horario}"></span></p>
+            </div>	
+        </div>
+        
+        
+        
+        <div th:each="evento :${evento}" class="container containerDetalhes">
+            <form method="post">
+                Nome: <input type="text" value="" name="nomeconvidado" placeholder="Nome Completo"/>
+                Rg: <input type="text" value="" name="rg" placeholder="Infome seu RG"/>
+                <button class="waves-effect waves-light btn" type="submit">Adicionar</button>
+                <th:block th:include="msgValidconvidado"> </th:block>
+             </form>
+        </div>	
+        <center><h5>Lista de convidados</h5></center>
+        <table class="container tabelaConvidado">
+             <thead>
+            <tr>
+                <th>Nome</th>
+                <th>RG</th>
+                <th>Deletar</th>
+            </tr>
+        </thead>
+            <tbody>
+                <tr th:each="convidado : ${convidado}">
+                    <td><span th:text="${convidado.nomeconvidado}"></span></td>
+                    <td><span th:text="${convidado.rg}"></span></td>
+                    <td><a class="waves-effect waves-light"
+					th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.rg)).build()}"><i
+						class="material-icons left">delete_forever</i></a></td>
+                </tr>
+            </tbody>
+        </table>
+        <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    </body>
+</html>

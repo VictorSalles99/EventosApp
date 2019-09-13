@@ -1,0 +1,76 @@
+.detalhesEvento{
+	box-shadow: 0px 0px 5px grey;
+	padding-top: 1px;
+	padding-left: 20px;
+	margin-bottom:60px;
+}
+.containerEvento{
+	box-shadow: 0px 0px 5px grey;
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	margin-bottom:60px;
+}
+.tabelaConvidado{
+	width:50%;
+}
+.containerDetalhes{
+	box-shadow: 0px 0px 5px grey;
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	margin-bottom:60px;
+}
+.headercolor{
+	background: red;
+}
+.menu{
+	background: red;
+	left: -285px;
+	height: 100%;
+	position: fixed;
+	width: 285px;
+	z-index: 5;
+	
+}
+.menu ul{
+	border-bottom: 1px solid red;
+font-family: 'Open Sans', sans-serif;
+  line-height: 45px;
+  padding-bottom: 3px;
+  padding-left: 20px;
+  padding-top: 3px;
+}
+
+.menu a {
+  color: #FFF;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.icon-close {
+  cursor: pointer;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.icon-menu {
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-top: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.containerLogin{ 
+  margin-top: 30px; 
+  width: 400px; 
+}
+.containerCadUser{ 
+  margin-top: 30px; 
+  width: 400px; 
+}
+

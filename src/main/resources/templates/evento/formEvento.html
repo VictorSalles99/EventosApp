@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+        <link type="text/css" rel="stylesheet" href="style/styleCss.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>EventosApp</title>
+    </head>
+    <body>
+        <header>
+
+            <nav>
+                <div class="nav-wrapper headercolor">
+                <a href="#" class="brand-logo">Eventos</a>
+                </div>
+            </nav>
+            <div class="menu">  
+                <div class="icon-close">
+                    <img src="https://img.icons8.com/metro/26/000000/multiply.png">
+                </div>
+                <ul>
+                    <li><a href="/eventos" class="waves-effect waves-light btn"> <i class="material-icons left">apps</i>Lista de Evento</a></li>
+                    <li><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Evento</a></li>
+                    <li><a href="/" class="waves-effect waves-light btn"><i class="material-icons left">home</i>Home</a></li>
+                    <li><a href="/logout" class="waves-effect waves-light btn"><i class="material-icons left">close</i>Sair</a></li>
+              
+                </ul>
+            </div>
+            <div class="icon-menu">
+                <img src="https://img.icons8.com/metro/26/000000/menu.png">
+            </div>	
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                <script>
+                function main () {
+                $('.icon-menu').click( function () {
+                $('.menu').animate({left: '0px'}, 200);
+                $('body').animate( {left: '285px'}, 200);
+                });
+                $('.icon-close').click( function () {
+                $('.menu').animate({left: '-285px'}, 200);
+                $('body').animate({left: '0px'}, 200);
+                });
+                };  
+                $(document).ready(main);
+            </script>
+        </header>
+	<div class="container containerEvento">
+		<form class="container" method="post">
+			Nome: <input type="text" value="" name="nome" />
+			<div class="row">
+				<div class="input-field col s6">
+					Local: <input type="text" value="" name="local" />
+				</div>
+				<div class="input-field col s3">
+					Data: <input type="date" value="" name="data" />
+				</div>
+				<div class="input-field col s3">
+					Horário: <input type="time" value="" name="horario" />
+				</div>
+			</div>
+			<button class="waves-effect waves-light btn" type="submit">
+				<i class="material-icons left">check</i>Salvar
+			</button>
+			<th:block th:include="msgValidevento">
+			</th:block>
+	</div>
+	</form>
+	<script type="text/javascript" src="materialixe/js/materialize.min.js"></script>
+</body>
+
+</html>
